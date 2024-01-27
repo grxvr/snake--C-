@@ -8,12 +8,7 @@ int main() {
         std::cin >> c;
         game->snake.changeDir(c);
         if (game->snakeDie()) {
-            gameloop.join();
-            game->endGame();
             delete game;
-            system("stty cooked; clear");
-            printf("Ти програв!\n");
-            sleep(3);
             game = new Game( 10 );
         }
     }

@@ -9,12 +9,17 @@
 
 const char BOARD_HOR_SIDE = '-';
 const char BOARD_VER_SIDE = '|';
-const char BOARD_CORNER = '+';
-const char BOARD_CHAR = ' ';
+const char BOARD_CORNER   = '+';
+const char BOARD_CHAR     = ' ';
 
 const char SNAKE_HEAD = 'O';
 const char SNAKE_BODY = 'o';
 const char SNAKE_TAIL = '*';
+
+const char UP    = 'w';
+const char DOWN  = 's';
+const char LEFT  = 'a';
+const char RIGHT = 'd';
 
 const char FOOD = '@';
 

@@ -32,10 +32,10 @@ public:
     ~Snake(){snPieces.clear();}
 
     void changeDir(char c){
-              if(c == 'w' && dir != 's') { dir = 'w';
-        }else if(c == 's' && dir != 'w') { dir = 's';
-        }else if(c == 'a' && dir != 'd') { dir = 'a';
-        }else if(c == 'd' && dir != 'a') { dir = 'd';}
+              if(c == UP && dir != DOWN) { dir = UP;
+        }else if(c == DOWN && dir != UP) { dir = DOWN;
+        }else if(c == LEFT && dir != RIGHT) { dir = LEFT;
+        }else if(c == RIGHT && dir != LEFT) { dir = RIGHT;}
     }
     void clearBoard(board B){
         for(size_t i = 0; i < snPieces.size(); i++)
@@ -53,9 +53,7 @@ public:
             snPieces.front().x == 0      ||
             snPieces.front().y == 0      ||
             snPieces.front().x == size-1 ||
-            snPieces.front().y == size-1 
-        ) {return true;}
-        else if (
+            snPieces.front().y == size-1 ||
             B[snPieces.front().y][snPieces.front().x] == SNAKE_BODY ||
             B[snPieces.front().y][snPieces.front().x] == SNAKE_TAIL 
         ) {return true;}
@@ -66,19 +64,19 @@ public:
         snake tempFront = snPieces.front(); tempFront.state = SNAKE_BODY;
         snake tempBack  = snPieces.back();  tempBack.state  = SNAKE_TAIL; 
         switch (dir) {
-            case 'w':
+            case UP:
                 snPieces.front().y--;
                 bodyLogic(&tempFront, &tempBack, B);
             break;
-            case 's':
+            case DOWN:
                 snPieces.front().y++;
                 bodyLogic(&tempFront, &tempBack, B);
             break;
-            case 'a':
+            case LEFT:
                 snPieces.front().x--;
                 bodyLogic(&tempFront, &tempBack, B);
             break;
-            case 'd':
+            case RIGHT:
                 snPieces.front().x++;
                 bodyLogic(&tempFront, &tempBack, B);
             break;
