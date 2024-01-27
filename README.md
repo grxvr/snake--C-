@@ -1,2 +1,2 @@
-# snake--C-
+# snake->C++
 Simple snake in terminal

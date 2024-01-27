@@ -47,25 +47,18 @@ public:
             B[snPieces.at(i).y][snPieces.at(i).x] = snPieces.at(i).state;
     }
 
-    bool snakeLose(board B){
+    bool Die(board B){
         system("stty cooked");
         if (
             snPieces.front().x == 0      ||
             snPieces.front().y == 0      ||
             snPieces.front().x == size-1 ||
             snPieces.front().y == size-1 
-        ) {
-            printf("\n%s\n", "Змійка зайшла за межі :(");
-            // std::exit(EXIT_SUCCESS);
-            return true;
-        }else if (
+        ) {return true;}
+        else if (
             B[snPieces.front().y][snPieces.front().x] == SNAKE_BODY ||
             B[snPieces.front().y][snPieces.front().x] == SNAKE_TAIL 
-        ) {
-            printf("\n%s\n", "Змійка вкусила сама себе :(");
-            // std::exit(EXIT_SUCCESS);
-            return true;
-        }
+        ) {return true;}
         return false;
     }
 

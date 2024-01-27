@@ -54,7 +54,5 @@ public:
     }
     void mainLoop();
     void endGame(){gameRuning = false;}
-    bool gameRuningF(){
-        return snake.snakeLose(BOARD);
-    }
+    bool snakeDie(){return snake.Die(BOARD);}
 };

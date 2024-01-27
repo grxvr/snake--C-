@@ -5,6 +5,7 @@
 #include <thread>
 #include <chrono>
 #include <vector>
+#include <unistd.h>
 
 const char BOARD_HOR_SIDE = '-';
 const char BOARD_VER_SIDE = '|';
